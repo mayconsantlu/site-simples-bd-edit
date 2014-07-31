@@ -82,7 +82,9 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
 			//$conteudo = 'includes/contato.php';
 		} elseif ($pag == 'busca') {
 			$titulo = $rotas["busca"];
-		} else {
+		} elseif ($pag == 'admin') {
+            $titulo = $rotas["admin"];
+        }else {
 			$titulo = $rotas["404"];
 			$pag = '404';
 			http_response_code(404);

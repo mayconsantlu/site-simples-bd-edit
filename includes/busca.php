@@ -8,6 +8,7 @@ if (isset($_POST['buscar']) && ($_POST['buscar'] != "") )
 		// Não funcionou com bindValue
 		$query = "Select * from paginas where titulo like '%$busca%' or conteudo like '%$busca%'";
 		$stmt = $conexao->prepare($query);
+        //$stmt ->bindValue("busca", "%{$busca}%");
 		$stmt -> execute();
 		$resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		//print_r($resultado);
