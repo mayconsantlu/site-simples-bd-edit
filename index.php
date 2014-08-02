@@ -155,12 +155,48 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="row clearfix">
                     <div class="col-md-12 column">
-                        <p class="text-center">Todos os direitos reservados <?= date("Y"); ?></p>
+                        <p class="text-center">Todos os direitos reservados <?= date("Y"); ?>
+                            <a id="logar" href="#login" role="button" class="btn btn-default pull-right" data-toggle="modal">login</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </footer>
+<!-- janela modal -->
+        <div class="modal fade" id="login" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title text-center" id="myModalLabel">
+                            Acesso Adm
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="login-page">
+                            <div class="container">
+                                <!--h1 class="brand"><a href="#">login</a></h1-->
+                                <form class="form" role="form" action="" method="post">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-lg" placeholder="Usuário" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control input-lg" placeholder="Senha">
+                                    </div>
+                                    <button type="submit" class="btn btn-login btn-block">Login</button>
+                                </form>
 
+                            </div> <!-- /.container -->
+                        </div> <!-- /.login-page -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </body>
 </html>
