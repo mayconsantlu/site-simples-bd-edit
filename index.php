@@ -1,4 +1,8 @@
 <?php
+session_start();
+$_SESSION[logado] = 1;
+
+
 $url = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 $getUrl = trim($url['path'], '/');
 //echo $getUrl. "<br/>";
@@ -52,6 +56,12 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
         <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>
+        <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+            //]]>
+        </script>
     </head>
 
     <body>
@@ -133,6 +143,10 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
                    <!-- breadcump -->
                         <div class="conteudo"> 
                         <?php
+
+
+                        
+
 						if ($pag == 'contato') {
 							echo($conteudo);
 							require_once ('includes/contato.php');
