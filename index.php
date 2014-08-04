@@ -101,7 +101,13 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
 		}
         ?>
         <!-- titulo e url -->
-
+<div class="barra">
+    <div class="container">
+        <div class="col-md-12 column">
+            <a id="logar" href="#login" role="button" class="btn pull-right" data-toggle="modal">login</a>
+        </div>
+    </div>
+</div>
        <div class="container">
             <header>
                 <div class="row clearfix">
@@ -141,22 +147,48 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
                    <!-- breadcump -->
 					<?php require_once ('includes/voce-esta.php'); ?>
                    <!-- breadcump -->
-                        <div class="conteudo"> 
+                        <div class="conteudo">
+
                         <?php
+                        if ($_SESSION['logado'] == 1){
+                            if ($pag == 'contato') {
+                            ?>
+                                <div class="form">
+                                    <form class="form-horizontal" method="post">
+                                        <textarea class="form-control" cols="3"><?=$conteudo; ?></textarea>
+                                        <br>
+                                        <button type="submit" class="btn btn-success pull-right">Salvar</button>
+                                    </form>
+                                </div>
+                            <?php
+                                require_once ('includes/contato.php');
+                            } elseif ($pag == '404') {
+                                require_once ('includes/404.php');
+                            }elseif ($pag == 'busca') {
+                                require_once ('includes/busca.php');
+                                //echo 'Teste ok';
+                            } else {
+                            ?>
+                                <div class="form">
+                                    <form class="form-horizontal" method="post">
+                                        <textarea class="form-control" cols="3"><?=$conteudo; ?></textarea>
+                                        <br>
+                                        <button type="submit" class="btn btn-success pull-right">Salvar</button>
+                                    </form>
+                                </div>
+                            <?php
+                            }
 
-
-                        
-
-						if ($pag == 'contato') {
-							echo($conteudo);
-							require_once ('includes/contato.php');
-						} elseif ($pag == '404') {
-							require_once ('includes/404.php');
-						}elseif ($pag == 'busca') {
-							require_once ('includes/busca.php');
-							//echo 'Teste ok';
-						} else {
-							echo($conteudo);
+                        }elseif ($pag == 'contato') {
+                            echo($conteudo);
+                            require_once ('includes/contato.php');
+                        } elseif ($pag == '404') {
+                            require_once ('includes/404.php');
+                        }elseif ($pag == 'busca') {
+                            require_once ('includes/busca.php');
+                            //echo 'Teste ok';
+                        } else {
+                            echo($conteudo);
 						}
                         ?>
                         </div>
@@ -170,7 +202,6 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
                 <div class="row clearfix">
                     <div class="col-md-12 column">
                         <p class="text-center">Todos os direitos reservados <?= date("Y"); ?>
-                            <a id="logar" href="#login" role="button" class="btn btn-default pull-right" data-toggle="modal">login</a>
                         </p>
                     </div>
                 </div>
@@ -190,7 +221,7 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
                         <div class="login-page">
                             <div class="container">
                                 <!--h1 class="brand"><a href="#">login</a></h1-->
-                                <form class="form" role="form" action="" method="post">
+                                <form class="form" role="form" action="login.php" method="post">
                                     <div class="form-group">
                                         <input type="text" class="form-control input-lg" placeholder="Usuário" required>
                                     </div>

@@ -1,3 +1,13 @@
+.barra {
+    background-color: #555555;
+    color: #ffffff;
+   border-bottom: 5px #3278b3 solid;;
+}
+.barra a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.barra a:visited {color: #ffffff;}
 nav ul li {
 	box-sizing:content-box;
 	border:1px #E8E8E8 solid;
