@@ -16,3 +16,5 @@ Contato
 *Páginas salvas no banco de dados* 
 
 *Controle de alteração pelo admin*..
+
+http://fazer-site.net/criar-sistema-de-login-com-banco-de-dados/

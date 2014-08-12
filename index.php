@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION[logado] = 1;
+//$_SESSION[logado] = 0;
 
 
 $url = parse_url("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
@@ -104,7 +104,14 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
 <div class="barra">
     <div class="container">
         <div class="col-md-12 column">
-            <a id="logar" href="#login" role="button" class="btn pull-right" data-toggle="modal">login</a>
+            <?php
+            if ($_SESSION['logado'] == 1){
+                echo '<a id="logar" href="logout.php" role="button" class="btn pull-right">Sair</a>';
+            }else {
+                echo '<a id="logar" href="#login" role="button" class="btn pull-right" data-toggle="modal">login</a>';
+            }
+            ?>
+
         </div>
     </div>
 </div>
@@ -149,13 +156,21 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
                    <!-- breadcump -->
                         <div class="conteudo">
 
+                            <?php
+                            //echo($_SESSION['usuario'].'<br>');
+                            //echo($_SESSION['pass']);
+                                if (isset($_SESSION['mensagem'])){
+                                    echo '<div class="alert '.$_SESSION['classe'].' " role="alert">'.$_SESSION['mensagem'].'</div>';
+                                }
+                            ?>
+
                         <?php
                         if ($_SESSION['logado'] == 1){
                             if ($pag == 'contato') {
                             ?>
                                 <div class="form">
                                     <form class="form-horizontal" method="post">
-                                        <textarea class="form-control" cols="3"><?=$conteudo; ?></textarea>
+                                        <textarea class="form-control " cols="3"><?=$conteudo; ?></textarea>
                                         <br>
                                         <button type="submit" class="btn btn-success pull-right">Salvar</button>
                                     </form>
@@ -223,12 +238,12 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
                                 <!--h1 class="brand"><a href="#">login</a></h1-->
                                 <form class="form" role="form" action="login.php" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control input-lg" placeholder="Usuário" required>
+                                        <input type="text" name="usuario" id="usuario" class="form-control input-lg" placeholder="Usuário" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control input-lg" placeholder="Senha">
+                                        <input type="password" name="senha" id="senha" class="form-control input-lg" placeholder="Senha">
                                     </div>
-                                    <button type="submit" class="btn btn-login btn-block">Login</button>
+                                    <button type="submit" name="login" class="btn btn-login btn-block">Login</button>
                                 </form>
 
                             </div> <!-- /.container -->
