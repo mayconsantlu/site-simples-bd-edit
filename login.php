@@ -26,7 +26,8 @@ include_once 'includes/config.php';
      } else {
          unset($_SESSION['usuario']);
          unset($_SESSION['senha']);
-         unset($_SESSION['mensagem']);
+         $_SESSION['mensagem'] = 'Usuario ou senha incorretos, verifique os dados e tente novamente!';
+         $_SESSION['classe'] = 'alert-danger';
          $_SESSION['logado'] = 0;
          header("Location: /");
      }

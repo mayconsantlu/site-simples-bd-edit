@@ -24,6 +24,8 @@ $stmt = $conexao -> prepare($query);
 $stmt -> bindValue("rota", $rota);
 $stmt -> execute();
 $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
+$_SESSION['id']=$resultado['id'];
+$_SESSION['titulo']=$resultado['titulo'];
 //print_r($resultado);
 ?>
 
@@ -169,8 +171,9 @@ $resultado = $stmt -> fetch(PDO::FETCH_ASSOC);
                             if ($pag == 'contato') {
                             ?>
                                 <div class="form">
-                                    <form class="form-horizontal" method="post">
-                                        <textarea class="form-control " cols="3"><?=$conteudo; ?></textarea>
+                                    <form class="form-horizontal" method="post" action="save.php">
+
+                                        <textarea class="form-control " name="conteudo" id="conteudo" cols="3"><?=$conteudo; ?></textarea>
                                         <br>
                                         <button type="submit" class="btn btn-success pull-right">Salvar</button>
                                     </form>
