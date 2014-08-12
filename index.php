@@ -105,9 +105,10 @@ $_SESSION['titulo']=$resultado['titulo'];
         <!-- titulo e url -->
 <div class="barra">
     <div class="container">
-        <div class="col-md-12 column">
+        <div class="col-md-12 column bar">
             <?php
             if ($_SESSION['logado'] == 1){
+                echo '<span class="pull-left">'.$_SESSION['nome'].'</span>';
                 echo '<a id="logar" href="logout.php" role="button" class="btn pull-right">Sair</a>';
             }else {
                 echo '<a id="logar" href="#login" role="button" class="btn pull-right" data-toggle="modal">login</a>';

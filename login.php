@@ -20,6 +20,7 @@ include_once 'includes/config.php';
      if (password_verify($senha, $hash)) {
          //echo 'A Senha é valida';
          $_SESSION['logado']=1;
+         $_SESSION['nome'] = $result['nome'];
          $_SESSION['mensagem'] = 'Você esta logago como administrador!';
          $_SESSION['classe'] = 'alert-success';
          header("Location: /");
