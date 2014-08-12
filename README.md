@@ -6,16 +6,16 @@ PHP - Code Education - Banco de Dados
 Criado um pequeno site em PHP com os seguintes requisitos:
 **Texto copiado dos requisitos**
 
-> Links de navegaÁ„o
+> Links de navega√ß√£o
 Home
 Empresa
 Produtos
-ServiÁos
+Servi√ßos
 Contato
 
-*P·ginas salvas no banco de dados* 
+*P√°ginas salvas no banco de dados*
 
-*Controle de alteraÁ„o pelo admin*..
+*Controle de altera√ß√£o pelo admin*..
 
-http://fazer-site.net/criar-sistema-de-login-com-banco-de-dados/
+### Adicionado edic√£o.
 git remote add origin1 https://github.com/mayconsantlu/site-simples-bd-edit.git

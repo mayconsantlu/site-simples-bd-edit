@@ -188,8 +188,8 @@ $_SESSION['titulo']=$resultado['titulo'];
                             } else {
                             ?>
                                 <div class="form">
-                                    <form class="form-horizontal" method="post">
-                                        <textarea class="form-control" cols="3"><?=$conteudo; ?></textarea>
+                                    <form class="form-horizontal" method="post" action="save.php">
+                                        <textarea class="form-control" name="conteudo" id="conteudo" cols="3"><?=$conteudo; ?></textarea>
                                         <br>
                                         <button type="submit" class="btn btn-success pull-right">Salvar</button>
                                     </form>
