@@ -18,3 +18,4 @@ Contato
 *Controle de alteração pelo admin*..
 
 http://fazer-site.net/criar-sistema-de-login-com-banco-de-dados/
+git remote add origin1 https://github.com/mayconsantlu/site-simples-bd-edit.git
